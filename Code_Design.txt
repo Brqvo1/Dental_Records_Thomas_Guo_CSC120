@@ -1,0 +1,63 @@
+# Dental Records Thomas Guo
+1. Declare Global Variables and Constants
+Store and share family information across all methods.
+
+1.1 Declare `MAXIMUM_FAMILY_MEMBERS = 6`.
+1.2 Declare `NUMBER_OF_TOOTH_LAYERS = 2`.
+1.3 Declare `MAXIMUM_TEETH_PER_LAYER = 8`.
+1.4 Create `KEYBOARD` to read user input.
+1.5 Declare `familyMemberCount` to store the family size.
+1.6 Create `String[] familyMemberNames` to store family members' names.
+1.7 Create `char[][][] familyMemberTeeth` to store teeth by person, layer, and position.
+1.8 Create `int[][] familyMemberToothCounts` to store the number of recorded teeth in each layer.
+
+2. Main Method
+
+2.1 Declare local variables for the menu selection and validation.
+2.2 Display welcome message.
+2.3 Call `recordFamilyInformation()` to collect family data.
+2.4 Display the menu and ask the user to select P, E, R, or X.
+2.5 Convert the selection to uppercase.
+2.6 If P, call `printFamilyRecords()`.
+2.7 If E, call `extractTooth()`.
+2.8 If R, call `reportRootCanalIndices()`.
+2.9 If invalid, display error.
+2.10 Repeat the menu until the user selects X.
+2.11 Display the exit message with Smile.png.
+
+## 3. Record Family Information Method. Collect, validate, and store family dental information.
+
+3.1 Declare local variables.
+3.2 Ask for family size (1–6) and validate input.
+3.3 Loop through family members and record their names, rejecting empty or duplicate names.
+3.4 Ask for upper and lower teeth strings.
+3.5 Convert teeth to uppercase and validate length (1–8) and types (I, B, M).
+3.6 Store names, tooth counts, and teeth in their respective arrays.
+
+## 4. Print Family Records Method: Display all family dental records.
+
+4.1 Declare local variables.
+4.2 Loop through each family member and display their name.
+4.3 Loop through upper and lower teeth.
+4.4 Display each tooth's position and type, numbering from 1.
+4.5 Repeat until every family member's record has been displayed.
+
+## 5. Extract Tooth Method: Select a tooth and change it to missing.*
+
+5.1 Declare local variables.
+5.2 Ask for family member, tooth layer (U/L), and tooth number, validating each input.
+5.3 Check that the selected layer has an available tooth.
+5.4 Reject missing teeth (M), asking for another tooth number.
+5.5 Change the selected tooth to M in the 3D array.
+5.6 Return to the main menu.
+
+## 6. Report Root Canal Indices Method: Count tooth types and calculate the family's root canal indices.*
+
+6.1 Declare all local variables.
+6.2 Initialize I, B, and M counts to zero.
+6.3 Loop through all family members' upper and lower teeth, counting the total I, B, and M teeth.
+6.4 If I > 0, calculate two roots using the quadratic formula: x = (-B +/- sqrt(B^2 + 4*I*M)) / (2*I)
+6.5 If I = 0, solve the linear equation when B > 0. Otherwise, handle no solution or infinitely many solutions.
+6.6 Display the calculated roots to two decimal places, or an appropriate message.
+
+
